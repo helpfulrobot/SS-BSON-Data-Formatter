@@ -58,7 +58,9 @@ class BSONDataFormatter extends JSONDataFormatter
         $items = [];
         foreach ($set as $do) {
             /** @var DataObject $do */
-            if (!$do->canView()) continue;
+            if (!$do->canView()) {
+                continue;
+            }
             $items[] = $this->convertDataObjectToJSONObject($do, $fields);
         }
 
